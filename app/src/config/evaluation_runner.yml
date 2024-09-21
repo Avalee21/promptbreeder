@@ -1,0 +1,39 @@
+gen:
+  exp_abbr_name: "multiple_package_layers" # name from summarizer.py
+  dataset_class_name: "DovMultiPackageLayerDataset"
+  dataset_postprocess_func: "multiple_package_layers_dataset_postprocess"
+  pred_postprocess_func: "multiple_package_layers_pred_postprocess"
+  input_columns: ["question"]
+  output_column: "answer"
+  evaluator: "Evaluator"
+  user_prompt: >
+    You need to return the result in JSON format with the following keys:
+    reason: <Explain how the decision is made>
+    answer: <matched: description mentions multiple layers of package, unmatched: description doesn't mention multiple layers of package>
+
+    New case to check:
+    {question}
+  bot_prompt: "{answer}"
+  save_path: "/workspace/promptbreeder/promptbreeder/evaluator/generated_modules/gen.py"
+
+eval:
+  model:
+    abbr: "gpt-35-turbo"
+    path: "gpt-35-turbo"
+    type: "AzureOpenAI"
+    query_per_second: 5
+    max_out_len: 512
+    max_seq_len: 4096
+    batch_size: 1
+    temperature: 0
+    api_base: "https://dscoeopenai-use2-for-llmeval.openai.azure.com/openai/deployments/gpt-35-turbo-deploy/chat/completions?api-version=2023-03-15-preview"
+  save_path: "/workspace/promptbreeder/promptbreeder/evaluator/generated_modules/eval.py"
+
+execute:
+  task_name: "DOV TASK"
+  run_script_path: "/workspace/promptbreeder/ds_llm_eval/app/src/run.py"
+  output_directory: "/workspace/promptbreeder/outputs"
+
+record:
+  result_directory: "/workspace/promptbreeder/results"
+  performance_metric: "accuracy"

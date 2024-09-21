@@ -1,0 +1,4 @@
+prompt_units_file_path: "/workspace/promptbreeder/outputs/multiple_package_layers/EXP_XXXXXXXXX/results/prompt_units.csv"
+valid_data_path: "/workspace/promptbreeder/data/valid_set.json"
+num_prompts: 5
+load_from_file: False

@@ -1,0 +1,49 @@
+models:
+  qwen-turbo-13B:
+    path: "qwen-turbo"
+    query_per_second: 1
+    max_token_per_minute: 100000
+    retry: 3
+    max_seq_len: 6144
+    temperature: 0.01
+    api_base: ""
+
+  qwen-plus-50B:
+    path: "qwen-plus"
+    query_per_second: 1
+    max_token_per_minute: 100000
+    retry: 3
+    max_seq_len: 6144
+    temperature: 0.01
+    api_base: ""
+
+  gpt-4:
+    path: "gpt-4"
+    query_per_second: 1
+    max_token_per_minute: 90000
+    retry: 10
+    max_seq_len: 8192
+    temperature: 0.7
+    api_base: ""
+
+  gpt-35-turbo:
+    path: "gpt-35-turbo"
+    query_per_second: 5
+    max_token_per_minute: 100000
+    max_seq_len: 4096
+    temperature: 0
+    api_base: ""
+
+  Llama-2-70B-chat:
+    path: "Llama-2-70B-chat"
+    query_per_second: 5
+    max_seq_len: 4096
+    temperature: 0.01
+    api_base: ""
+
+  Llama-2-70B-chat-GPTQ:
+    path: "Llama-2-70B-chat-GPTQ"
+    query_per_second: 5
+    max_seq_len: 4096
+    temperature: 0.01
+    api_base: ""

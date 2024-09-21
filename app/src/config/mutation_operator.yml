@@ -1,0 +1,29 @@
+
+thinking_styles_file_path: "/workspace/promptbreeder/data/thinking_styles.csv"
+mutation_prompts_file_path: "/workspace/promptbreeder/data/mutation_prompts.csv"
+llm_name: "gpt-4"
+task_description: >
+  You will be provided with three inputs about the introduction of the cargo being shipped, which are provided by our customers:
+  Declared cargo package quantity: <XXX>
+  Declared cargo package type: <XXX>
+  Cargo description: <XXX>
+
+  Check whether the cargo description mentions multiple layers of packages. For example, in the case "10 crates=200 cartons", it mentions both "crates" and "cartons" and thus it fits the current scenario.
+
+exemplars:
+  exemplars_path: "/workspace/promptbreeder/data/exemplars_set.json"
+  context_list_max_size: 2
+  value_names:
+    - qty
+    - pkg_type
+    - long_desc
+    - reason
+    - label
+  text: >
+    Input:
+    Declared cargo package quantity: {value1}
+    Declared cargo package type: {value2}
+    Cargo description: {value3}
+
+    Output:
+    {"reason": "{value4}", "answer": "{value5}"}

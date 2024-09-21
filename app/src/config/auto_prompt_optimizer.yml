@@ -1,0 +1,11 @@
+prompt_initializer_config_path: "/workspace/promptbreeder/config/prompt_initializer.yml"
+mutation_operator_config_path: "/workspace/promptbreeder/config/mutation_operator.yml"
+evaluation_runner_config_path: "/workspace/promptbreeder/config/evaluation_runner.yml"
+
+is_baseline: False
+strategy: "Score" # or "Iteration"
+num_iterations: 50
+target_score: 85
+test_all_units: True
+
+test_data_path: "/workspace/promptbreeder/data/test_set.json"
