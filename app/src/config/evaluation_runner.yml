@@ -1,6 +1,6 @@
 gen:
   exp_abbr_name: "multiple_package_layers" # name from summarizer.py
-  dataset_class_name: "DovMultiPackageLayerDataset"
+  dataset_class_name: "MultiPackageLayerDataset"
   dataset_postprocess_func: "multiple_package_layers_dataset_postprocess"
   pred_postprocess_func: "multiple_package_layers_pred_postprocess"
   input_columns: ["question"]
@@ -26,12 +26,12 @@ eval:
     max_seq_len: 4096
     batch_size: 1
     temperature: 0
-    api_base: "https://dscoeopenai-use2-for-llmeval.openai.azure.com/openai/deployments/gpt-35-turbo-deploy/chat/completions?api-version=2023-03-15-preview"
+    api_base: ""
   save_path: "/workspace/promptbreeder/promptbreeder/evaluator/generated_modules/eval.py"
 
 execute:
-  task_name: "DOV TASK"
-  run_script_path: "/workspace/promptbreeder/ds_llm_eval/app/src/run.py"
+  task_name: "Example TASK"
+  run_script_path: "/workspace/promptbreeder/<eval_module>/app/src/run.py"
   output_directory: "/workspace/promptbreeder/outputs"
 
 record:
