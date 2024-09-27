@@ -1,6 +1,6 @@
 # promptbreeder
 
-This project implements the mechanism described in the PromptBreeder paper for automatic optimization and evaluation of prompts.
+This project implements the mechanism described in the [PromptBreeder](https://arxiv.org/abs/2309.16797) paper for automatic optimization and evaluation of prompts.
 
 ## Prerequisites
 
